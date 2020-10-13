@@ -1,13 +1,15 @@
 'use strict';
 
-var renderWorldMap = function renderWorldMap() {
+//Function renderWorldMap
+var renderWorldMap = function renderWorldMap() {}
 
-}
-
+//Call function map
 renderWorldMap.prototype.run = function() {
   this.mapCreator();
+  this.mouseEvent();
+  this.countryInfo();
 }
-
+//Map SVG
 renderWorldMap.prototype.mapCreator = function() {
   document.body.insertAdjacentHTML('afterbegin',
     `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -737,6 +739,64 @@ renderWorldMap.prototype.mapCreator = function() {
        d="M516.76,230.59l1.63,0.05l0.68,1.01h2.37l1.58-0.58l0.53,0.64l-1.05,1.38l-4.63,0.16l-0.84-1.11l-0.89-0.53L516.76,230.59L516.76,230.59z" /></svg>`
   );
 }
+//Mouse events
+renderWorldMap.prototype.mouseEvent = function() {
+  var pathCountry = document.body.querySelectorAll('path');
+  //For each
+  pathCountry.forEach(function(path) {
+    path.addEventListener('click', event => {
+      pathCountry.forEach(function(pathCountry2) {
+        pathCountry2.style.fill = 'black';
+      });
+      event.target.style.fill = 'red';
+    });
+    //Mouse Enter
+    path.addEventListener('mouseenter', event => {
+      if(event.target.style.fill == 'red') {
+        return event.target.style.fill = 'red';
+      }
+      else{
+        event.target.style.fill = 'blue';
+      }
+    });
+    // Mouse Leave
+    path.addEventListener('mouseleave', event => {
+      if(event.target.style.fill == 'red') {
+        return event.target.style.fill = 'red';
+      }
+      else{
+        event.target.style.fill = 'black';
+      }
+    });
+  });
+}
 
-var map = new renderWorldMap();
-map.run();
+//Country Informations
+renderWorldMap.prototype.countryInfo = function() {
+  var countryLegend = document.createElement('div');
+  var country = document.body.querySelectorAll('path');
+  var overfly = document.createElement('p');
+  var target = document.createElement('p');
+
+  country.forEach(function(path) {
+    path.addEventListener('mouseenter', event => {
+      overfly.textContent = 'Pays survolé : ' + event.target.id.toUpperCase();
+      overfly.style.backgroundColor = "blue";
+      overfly.style.color = "white" ;
+      overfly.style.fontWeight = "bold";
+      countryLegend.appendChild(overfly);
+    });
+    path.addEventListener('click', event => {
+      target.textContent = 'Pays ciblé : ' + event.target.id.toUpperCase();
+      target.style.backgroundColor = "red";
+      target.style.color = "white";
+      target.style.fontWeight = "bold";
+      countryLegend.prepend(target);
+    });
+  });
+  document.body.appendChild(countryLegend);
+}
+
+//Start Map
+var worldMap = new renderWorldMap();
+worldMap.run();
