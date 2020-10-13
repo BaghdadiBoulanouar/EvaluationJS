@@ -77,6 +77,5 @@ checkForm.prototype.form = function() {
   document.getElementsByTagName('body')[0].appendChild(f);
 }
 
-
 var formulaire = new checkForm();
 formulaire.run();
