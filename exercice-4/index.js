@@ -358,7 +358,7 @@ renderWorldMap.prototype.mapCreator = function() {
        d="M658.53,326.28l-0.15,3.22l1.22,0.61l1.07-2.15L658.53,326.28L658.53,326.28z" /><path
        id="gan"
        d="M658.84,332.57l-1.07,1.07l1.22,1.07l1.52-1.07L658.84,332.57L658.84,332.57z" /><path
-       id="path151"
+       id="Hello man how are you ?"
        d="M372.64,217.02l-1.36,1.37l2.44,1.37l0.27-1.91L372.64,217.02L372.64,217.02z" /><path
        id="terceira"
        d="M379.97,216.2l-1.63,1.09l1.36,1.09l2.17-0.55L379.97,216.2L379.97,216.2z" /><path
@@ -752,7 +752,7 @@ renderWorldMap.prototype.mouseEvent = function() {
     });
     //Mouse Enter
     path.addEventListener('mouseenter', event => {
-      if(event.target.style.fill == 'red') {
+      if(event.target.style.fill === 'red') {
         return event.target.style.fill = 'red';
       }
       else{
@@ -761,7 +761,7 @@ renderWorldMap.prototype.mouseEvent = function() {
     });
     // Mouse Leave
     path.addEventListener('mouseleave', event => {
-      if(event.target.style.fill == 'red') {
+      if(event.target.style.fill === 'red') {
         return event.target.style.fill = 'red';
       }
       else{
@@ -784,14 +784,14 @@ renderWorldMap.prototype.countryInfo = function() {
       overfly.style.backgroundColor = "blue";
       overfly.style.color = "white" ;
       overfly.style.fontWeight = "bold";
-      countryLegend.appendChild(overfly);
+      countryLegend.prepend(overfly);
     });
     path.addEventListener('click', event => {
       target.textContent = 'Pays ciblé : ' + event.target.id.toUpperCase();
       target.style.backgroundColor = "red";
       target.style.color = "white";
       target.style.fontWeight = "bold";
-      countryLegend.prepend(target);
+      countryLegend.appendChild(target);
     });
   });
   document.body.appendChild(countryLegend);
