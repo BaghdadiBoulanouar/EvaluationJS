@@ -77,5 +77,75 @@ checkForm.prototype.form = function() {
   document.getElementsByTagName('body')[0].appendChild(f);
 }
 
+//Functions
+
+checkForm.prototype.check = function() {
+  var button = document.querySelector(('[type="button"]'));
+  var seeCheck = document.createElement('div');
+  button.addEventListener('click', event => {
+    seeCheck.innerHTML = '';
+    var checkName = RegExp(/^(?=.{1,40}$)[a-zA-Z]+(?:[-' ][a-zA-Z]+)*$/);
+    var pName = document.createElement('p');
+    var NameValue = document.querySelector('[name="name"]').value;
+    //Condition
+    if(checkName.test(NameValue)) {
+        pName.textContent = 'Le nom est valide';
+        pName.style.color = 'lime';
+    }
+    else {
+        pName.textContent = 'Le nom est invalide';
+        pName.style.color = 'crimson';
+    }
+    //Appendchild
+    seeCheck.appendChild(pName);
+
+    var checkFirstName = RegExp(/^(?=.{1,40}$)[a-zA-Z]+(?:[-' ][a-zA-Z]+)*$/);
+    var pFirstName = document.createElement('p');
+    var firstNameValue = document.querySelector('[name="firstname"]').value;
+    //Condition
+    if(checkFirstName.test(firstNameValue)) {
+      pFirstName.textContent = 'Le prénom est valide';
+      pFirstName.style.color = 'lime';
+    }
+    else {
+      pFirstName.textContent = 'Le prénom est invalide';
+      pFirstName.style.color = 'crimson';
+    }
+    //Appendchild
+    seeCheck.appendChild(pFirstName);
+
+    var checkEmail = RegExp(/[\w.]+@\w+\.(net|com|fr|org)/);
+    var email = document.createElement('p');
+    var emailValue = document.querySelector('[name="email"]').value;
+    //Condition
+    if(checkEmail.test(emailValue)) {
+      email.textContent = "L'e-mail est valide";
+      email.style.color = "lime";
+    }
+    else {
+      email.textContent = "L'e-mail est invalide";
+      email.style.color = "crimson";
+    }
+    //Appendchild
+    seeCheck.appendChild(email);
+
+    var checkPassword = RegExp(/\w+/);
+    var pPassword = document.createElement('p');
+    var passwordValue = document.querySelector('[name="password"]').value;
+    //Condition
+    if(checkPassword.test(passwordValue)) {
+      pPassword.textContent = 'Mot de passe valide';
+      pPassword.style.color = 'lime';
+    }
+    else {
+      pPassword.textContent = 'Mot de passe invalide';
+      pPassword.style.color = 'crimson';
+    }
+    //Appendchild
+    seeCheck.appendChild(pPassword);
+    document.body.appendChild(seeCheck);
+  })
+}
+
 var formulaire = new checkForm();
 formulaire.run();
