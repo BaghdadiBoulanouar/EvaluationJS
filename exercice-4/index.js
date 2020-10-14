@@ -10,6 +10,9 @@ renderWorldMap.prototype.run = function() {
   this.countryInfo();
 }
 //Map SVG
+/**
+ * Creation de la worldMap
+ */
 renderWorldMap.prototype.mapCreator = function() {
   document.body.insertAdjacentHTML('afterbegin',
     `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -740,6 +743,9 @@ renderWorldMap.prototype.mapCreator = function() {
   );
 }
 //Mouse events
+/**
+ * Evenement de la souris
+ */
 renderWorldMap.prototype.mouseEvent = function() {
   var pathCountry = document.body.querySelectorAll('path');
   //For each
@@ -772,6 +778,9 @@ renderWorldMap.prototype.mouseEvent = function() {
 }
 
 //Country Informations
+/**
+ * Informations du pays en temps réel
+ */
 renderWorldMap.prototype.countryInfo = function() {
   var countryLegend = document.createElement('div');
   var country = document.body.querySelectorAll('path');
