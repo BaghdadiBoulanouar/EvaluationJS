@@ -1,4 +1,8 @@
 // FONCTIONS
+/** Generateur de grille
+ * @param  {} xAxis
+ * @param  {} yAxis
+ */
 var gridGenerator = function gridGenerator(xAxis, yAxis){
     var table = document.createElement("table");
         for (var i=0;i<xAxis;i++){
@@ -13,6 +17,9 @@ var gridGenerator = function gridGenerator(xAxis, yAxis){
         document.body.appendChild(table);
     }
     
+    
+    /** Couleur aléatoire
+     */
     function getRandomColor() {
       var letters = '0123456789ABCDEF';
       var color = '#';
@@ -21,7 +28,9 @@ var gridGenerator = function gridGenerator(xAxis, yAxis){
       }
       return color;
     }
-
+    /** Changement de couleur
+     * @param  {} className
+     */
     function changeColor(className){
         setInterval( function() {
         var carre = document.querySelectorAll(className);
