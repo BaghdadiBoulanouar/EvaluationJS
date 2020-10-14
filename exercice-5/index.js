@@ -8,7 +8,9 @@ checkForm.prototype.run = function() {
   this.form();
   this.check();
 }
-
+/**
+ * Function about form 
+ */
 checkForm.prototype.form = function() {
   //Create form
   var f = document.createElement("form");
@@ -77,8 +79,10 @@ checkForm.prototype.form = function() {
   document.getElementsByTagName('body')[0].appendChild(f);
 }
 
-//Functions
 
+/**
+ * Function for check information of form
+ */
 checkForm.prototype.check = function() {
   var button = document.querySelector(('[type="button"]'));
   var seeCheck = document.createElement('div');
