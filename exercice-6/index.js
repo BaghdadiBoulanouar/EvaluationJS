@@ -9,7 +9,9 @@ checkPhoneNumber.prototype.run = function() {
     this.check();
 
 }
-
+/**
+ * Create form for enter phone Number
+ */
 checkPhoneNumber.prototype.form = function() {
     var f = document.createElement("form");
     //Entrée numéro form
@@ -30,7 +32,9 @@ checkPhoneNumber.prototype.form = function() {
     f.appendChild(s);
     document.body.appendChild(f); //document.getElementsByTagName('body')[0].appendChild(f);
 }
-
+/**
+ * Function for check information of form
+ */
 checkPhoneNumber.prototype.check = function() {
     var button = document.querySelector('[type="button"]');
     var p = document.createElement('p');
