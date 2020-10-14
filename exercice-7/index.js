@@ -8,7 +8,7 @@ var computeNotes = function computeNotes(Array) {
 computeNotes.prototype.run = function() {
     this.form();
     this.somme();
-    //this.calculator();
+    this.calculator();
 
 }
 computeNotes.prototype.form = function() {
@@ -49,6 +49,22 @@ computeNotes.prototype.somme = function () {
         p.textContent = "Les notes rentrées : " + Array;
         document.body.appendChild(p); 
         console.log(Array + " " + Array.length)
+    })
+}
+
+computeNotes.prototype.calculator = function () { 
+    var p2 = document.createElement('p');
+    p2.textContent = "La moyenne est de : ";
+    document.body.appendChild(p2); 
+    var button2 = document.querySelector('[value="Calculer Moyenne"]');
+    button2.addEventListener('click', event => { 
+        var length = Array.length;
+        var somme = 0;
+        for(var i = 0; i < length; i++){
+            resultat += Array[i] / length;
+            console.log(somme)
+        }
+        p2.textContent = "La moyenne est de : " + resultat;
     })
 }
 
