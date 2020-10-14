@@ -7,7 +7,7 @@ var computeNotes = function computeNotes(Array) {
 
 computeNotes.prototype.run = function() {
     this.form();
-    //this.somme();
+    this.somme();
     //this.calculator();
 
 }
@@ -37,6 +37,20 @@ computeNotes.prototype.form = function() {
     document.body.appendChild(f); //document.getElementsByTagName('body')[0].appendChild(f);
 }
 
+computeNotes.prototype.somme = function () { 
+    var p = document.createElement('p');
+    p.textContent = "Les notes rentrées : ";
+    document.body.appendChild(p); 
+    var button = document.querySelector('[value="Somme"]');
+    button.addEventListener('click', event => { 
+        var number = document.querySelector('[type=number]');
+        var newValue = number.value;
+        var number = Array.push(newValue);
+        p.textContent = "Les notes rentrées : " + Array;
+        document.body.appendChild(p); 
+        console.log(Array + " " + Array.length)
+    })
+}
 
 var form = new computeNotes(Array);
 form.run();
