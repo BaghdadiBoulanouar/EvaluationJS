@@ -6,6 +6,8 @@ var checkPhoneNumber = function checkForm() {
 
 checkPhoneNumber.prototype.run = function() {
     this.form();
+    this.check();
+
 }
 
 checkPhoneNumber.prototype.form = function() {
@@ -29,7 +31,25 @@ checkPhoneNumber.prototype.form = function() {
     document.body.appendChild(f); //document.getElementsByTagName('body')[0].appendChild(f);
 }
 
-
+checkPhoneNumber.prototype.check = function() {
+    var button = document.querySelector('[type="button"]');
+    var p = document.createElement('p');
+    button.addEventListener('click', event => { 
+        p.innerHTML = '';
+        var checkPhoneNumber = RegExp(/[0]{1}[1-7]{1}[0-9]{8}/);
+        var checkPhoneValue = document.querySelector('[name="number"]').value;
+        //Conditions
+        if(checkPhoneNumber.test(checkPhoneValue)){
+            p.textContent = "Le numéro de téléphone est valide";
+            p.style.color = "lime";
+        }
+        else{
+            p.textContent = "Le numéro de téléphone est invalide";
+            p.style.color = "crimson";
+        }
+        document.body.appendChild(p);
+    })
+}
     var formCheck = new checkPhoneNumber();
     formCheck.run();
 
