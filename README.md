@@ -31,6 +31,12 @@ Differents exercices about JavaScript for school.
 ├── exercice-7
 │   ├── index.html
 │   └── index.js
+├── exercice-8
+│   ├── index.html
+│   └── index.js
+├── exercice-9
+│   ├── index.html
+│   └── index.js
 └── README.md
 
 ```
@@ -91,4 +97,4 @@ Differents exercices about JavaScript for school.
   * Create a function calculator (calculate average of all Array number)
 
 ### Author
-[**BOULANOUAR Baghdadi**](https://github.com/BaghdadiBoulanouar) \ 
+[**BOULANOUAR Baghdadi**](https://github.com/BaghdadiBoulanouar)  
