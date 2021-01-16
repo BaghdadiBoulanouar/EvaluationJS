@@ -65,13 +65,16 @@ computeNotes.prototype.calculator = function () {
     document.body.appendChild(p2); 
     var button2 = document.querySelector('[value="Calculer Moyenne"]');
     button2.addEventListener('click', event => { 
-        var length = Array.length;
-        var somme = 0;
-        for(var i = 0; i < length; i++){
-            resultat += Array[i] / length;
-            console.log(somme)
+        var unit = Array.length; //2
+        console.log(Array)
+        var total = 0;
+        for(var i = 0; i < unit; i++){
+            total += parseFloat(Array[i]);
         }
-        p2.textContent = "La moyenne est de : " + resultat;
+        console.log(total)
+        var avg = total / unit;
+        console.log(avg)
+        p2.textContent = "La moyenne est de : " + avg;
     })
 }
 
