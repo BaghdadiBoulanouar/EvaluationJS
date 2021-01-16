@@ -45,7 +45,7 @@ Differents exercices about JavaScript for school.
   * Exercice 2
   Vous devez réaliser une barre de chargement. Cette barre de chargement devra comprendre deux parties, une partie colorée et une partie non colorée pour permettre de repérer le progression de la barre. Vous devrez créer la classe “drawBar” qui prendra deux arguments : “sum” pour la somme totale du nombre et “nbr” pour la proportion du segement chargé de la barre. La barre devra être responsive à “100%” par rapport à la taille totale de son conteneur HTML.
   
-  * Exercice 3 (not finish)
+  * Exercice 3 
   Réaliser le jeu du morpion avec une classe “MyMorpionXO”. Vous devez compter les points gagnés. Lorsqu’un des deux joueurs obtient 3 points la phrase “X/O a gagné la partie !” devra apparaître.
 
   * Exercice 4
